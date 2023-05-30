@@ -21,7 +21,7 @@ from torchvision import transforms
 import torch.nn.functional as F
 
 from skimage.filters import gaussian, sobel
-from skimage.color import rgb2grey
+from skimage.color import rgb2gray
 
 from scipy.interpolate import griddata
 import cv2

@@ -60,6 +60,14 @@ If you find our work useful or interesting, please consider citing [our paper](h
 }
 ```
 
+## Installation
+
+```shell
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install scikit-image
+pip install tensorboardX
+pip install webp
+```
 
 ## 📊 Evaluation
 
@@ -70,13 +78,11 @@ To run inference on these datasets first download them, and update  `paths_confi
 
 Note that we report scores on the *training sets* of each dataset since we never see these images during training.
 
-Run evaluation using:
+Run evaluation using on Windows (use command line and not PowerShell):
 
 ```
-CUDA_VISIBLE_DEVICES=X  python main.py \
-  --mode inference \
-  --load_path <downloaded_model_path> 
-
+set CUDA_VISIBLE_DEVICES=0
+python main.py --mode inference --load_path <downloaded_model_path> 
 ```
 optionally setting `--test_data_types` and `--save_disparities`.
 
